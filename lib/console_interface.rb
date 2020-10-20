@@ -1,6 +1,6 @@
 class ConsoleInterface
   FIGURES =
-      Dir[__dir__ + '/../data/figures/*.txt'].
+    Dir[__dir__ + '/../data/figures/*.txt'].
       sort.
       map { |file_name| File.read(file_name) }
 
@@ -14,7 +14,6 @@ class ConsoleInterface
       #{figure}
       Ошибки (#{@game.errors_made}): #{errors_to_show}
       У вас осталось ошибок: #{@game.errors_allowed}
-
     END
 
     if @game.won?
@@ -30,8 +29,7 @@ class ConsoleInterface
 
   def word_to_show
     result =
-      @game.letters_to_guess.map do |letter|
-        
+      @game.letters_to_guess.map do |letter|        
         if letter == nil
           "__"
         else
